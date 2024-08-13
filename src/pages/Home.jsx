@@ -1,10 +1,10 @@
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
-import HeadPara from "../components/HeadPara";
+import HeadPara from "../components/common/HeadPara";
 import data from "./data.json";
-import Slider from "../components/Slider";
+import Slider from "../components/common/Slider";
 import Model from "../components/Model";
-import HighLightText2 from "../components/HighLightText2";
+import HighLightText2 from "../components/common/HighLightText2";
 
 export default function Home() {
   return (

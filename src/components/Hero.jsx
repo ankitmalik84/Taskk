@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import heroBg from "../assets/hero.png";
-import Button from "./Button";
+import Button from "./common/Button";
 
 export default function Hero() {
   const [slideIndex, setSlideIndex] = useState(0);

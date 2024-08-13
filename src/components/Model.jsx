@@ -1,5 +1,5 @@
-import Button from "./Button";
-import HighLightText2 from "./HighLightText2";
+import Button from "./common/Button";
+import HighLightText2 from "./common/HighLightText2";
 import { GoArrowUpRight } from "react-icons/go";
 
 export default function Model() {

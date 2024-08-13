@@ -1,8 +1,8 @@
 import axios from "axios";
 import BottomWarning from "../components/BottomWarning";
-import Button from "../components/Button";
+import Button from "../components/common/Button";
 import Heading from "../components/Heading";
-import Input from "../components/Input";
+import Input from "../components/common/Input";
 import SubHeading from "../components/SubHeading";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
