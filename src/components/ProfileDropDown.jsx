@@ -1,8 +1,10 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+
 export default function ProfileDropDown({ userName }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+
   return (
     <>
       <div
@@ -14,7 +16,7 @@ export default function ProfileDropDown({ userName }) {
         {userName.charAt(0)}
       </div>
       {isOpen && (
-        <div className="absolute top-[60px] right-0 mx-2 md:mx-8 border-2 rounded-lg">
+        <div className="absolute top-[60px] right-0 mx-2 md:mx-8 border-2 rounded-lg bg-white">
           <div
             onClick={() => {
               localStorage.removeItem("token");
@@ -22,7 +24,7 @@ export default function ProfileDropDown({ userName }) {
             }}
             className="p-1 bg-gray-300 border-2 rounded-lg shadow-md cursor-pointer"
           >
-            LogOut
+            Log Out
           </div>
         </div>
       )}

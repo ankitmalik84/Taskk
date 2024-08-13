@@ -3,6 +3,8 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
 import Documentation from "./pages/Documentation";
+import Signin from "./pages/Signin";
+import Signup from "./pages/Signup";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -20,17 +22,11 @@ function App() {
         {/* If the user is not authenticated, redirect to the login page */}
         <Route
           path="/"
-          element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
+          element={isAuthenticated ? <Home /> : <Navigate to="/singup" />}
         />
         <Route path="/documentation" element={<Documentation />} />
-        <Route
-          path="/login"
-          element={
-            <div>
-              <h1>Login Page</h1>
-            </div>
-          }
-        />
+        <Route path="/login" element={<Signin />} />
+        <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>
   );

@@ -3,13 +3,13 @@ import HighLightText from "./HighLightText";
 export default function HeadPara({
   title,
   description,
-  highlightIndex,
+  highlightIndex = -1,
   leading,
 }) {
   const words = title.split(" ");
 
   return (
-    <div className="w-full mx-auto flex flex-col my-16">
+    <div className={`w-full mx-auto flex flex-col ${description && "my-16"} `}>
       <h1 className={`text-4xl font-bold ${leading || ""} text-white`}>
         {words.map((word, index) =>
           index === highlightIndex ? (

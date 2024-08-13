@@ -19,7 +19,7 @@ export default function Home() {
           highlightIndex={item.highlightIndex}
         />
       ))}
-      <div className="flex w-[63%] mx-auto">
+      <div className="flex w-[64%] mx-auto">
         <HighLightText2
           text={
             "OvaDrive isn’t just about saving your chats," +

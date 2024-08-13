@@ -2,9 +2,11 @@ import { Link, useLocation } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Button from "./common/Button";
 import data from "../data.json";
+import ProfileDropDown from "./ProfileDropDown";
 
 export default function NavBar() {
   const location = useLocation();
+  const token = localStorage.getItem("token");
 
   // Utility function to capitalize the first letter of a string
   const capitalizeFirstLetter = (string) => {
@@ -24,33 +26,36 @@ export default function NavBar() {
               alt="logo"
               className="w-10 h-10 object-cover rounded-full"
             />
-
             <div className="text-white text-lg w-20">OvaDrive</div>
           </div>
           <div className="flex justify-between w-full">
-            <div className="my-auto">
-              <p>{pageName}</p>
-            </div>
-            <div className="flex space-x-4">
-              <Button
-                text="Sign Up"
-                bgcolor="bg-transparent"
-                textcolor="text-customPurple"
-                bordercolor="border-customPurple"
-                height="h-9"
-                width="w-24"
-                onClickFn={() => (window.location.href = "/signup")}
+            <div className="my-auto text-white text-lg">{pageName}</div>
+            {token === null ? (
+              <div className="flex space-x-4">
+                <Button
+                  text="Sign Up"
+                  bgcolor="bg-transparent"
+                  textcolor="text-customPurple"
+                  bordercolor="border-customPurple"
+                  height="h-9"
+                  width="w-24"
+                  onClickFn={() => (window.location.href = "/signup")}
+                />
+                <Button
+                  text="Login"
+                  bgcolor="bg-customPurple"
+                  textcolor="text-white"
+                  bordercolor="border-customPurple"
+                  height="h-9"
+                  width="w-24"
+                  onClickFn={() => (window.location.href = "/login")}
+                />
+              </div>
+            ) : (
+              <ProfileDropDown
+                userName={JSON.parse(localStorage.getItem("Users")).fullname}
               />
-              <Button
-                text="Login"
-                bgcolor="bg-customPurple"
-                textcolor="text-white"
-                bordercolor="border-customPurple"
-                height="h-9"
-                width="w-24"
-                onClickFn={() => (window.location.href = "/login")}
-              />
-            </div>
+            )}
           </div>
         </>
       ) : (
