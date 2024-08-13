@@ -1,14 +1,14 @@
 import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import HeadPara from "../components/common/HeadPara";
-import data from "./data.json";
+import data from "../data.json";
 import Slider from "../components/common/Slider";
 import Model from "../components/Model";
 import HighLightText2 from "../components/common/HighLightText2";
 
 export default function Home() {
   return (
-    <div className="px-6 py-2 bg-customBlack">
+    <div className="px-12 py-2 bg-customBlack">
       <NavBar />
       <Hero />
       {data.content.map((item) => (

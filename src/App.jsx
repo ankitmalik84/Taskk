@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import "./App.css";
 import Home from "./pages/Home";
+import Documentation from "./pages/Documentation";
 
 function App() {
   const [isAuthenticated, setIsAuthenticated] = useState(true);
@@ -21,7 +22,7 @@ function App() {
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/login" />}
         />
-        <Route path="/documentation" element={<h1>Documentation</h1>} />
+        <Route path="/documentation" element={<Documentation />} />
         <Route
           path="/login"
           element={
