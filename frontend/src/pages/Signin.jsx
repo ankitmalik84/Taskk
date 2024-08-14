@@ -1,5 +1,5 @@
 import axios from "axios";
-import BottomWarning from "../components/ButtonWarning";
+import BottomWarning from "../components/common/ButtonWarning";
 import Button from "../components/common/Button";
 import HeadPara from "../components/common/HeadPara";
 import Input from "../components/common/Input";
