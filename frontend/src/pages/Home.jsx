@@ -8,7 +8,7 @@ import HighLightText2 from "../components/common/HighLightText2";
 
 export default function Home() {
   return (
-    <div className="px-12 py-2 bg-customBlack">
+    <div className="px-4 sm:px-8 lg:px-12 py-2 bg-customBlack">
       <NavBar />
       <Hero />
       {data.content.map((item) => (
@@ -19,7 +19,7 @@ export default function Home() {
           highlightIndex={item.highlightIndex}
         />
       ))}
-      <div className="flex w-[64%] mx-auto">
+      <div className="flex w-full lg:w-[64%] mx-auto">
         <HighLightText2
           text={
             "OvaDrive isn’t just about saving your chats," +

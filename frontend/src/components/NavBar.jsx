@@ -8,16 +8,14 @@ export default function NavBar() {
   const location = useLocation();
   const token = localStorage.getItem("token");
 
-  // Utility function to capitalize the first letter of a string
   const capitalizeFirstLetter = (string) => {
     return string.charAt(0).toUpperCase() + string.slice(1);
   };
 
-  // Get the page name by capitalizing the first letter of the pathname
   const pageName = capitalizeFirstLetter(location.pathname.slice(1));
 
   return (
-    <nav className="py-6 flex items-center justify-between">
+    <nav className="py-4 px-4 flex items-center justify-between">
       {location.pathname === "/documentation" ? (
         <>
           <div className="flex items-center space-x-2 w-[17rem]">
@@ -25,7 +23,7 @@ export default function NavBar() {
               <img
                 src={logo}
                 alt="logo"
-                className="w-10 h-10 object-cover rounded-full"
+                className="w-8 sm:w-10 h-8 sm:h-10 object-cover rounded-full"
               />
             </Link>
             <div className="text-white text-lg w-20">OvaDrive</div>
@@ -33,7 +31,7 @@ export default function NavBar() {
           <div className="flex justify-between w-full">
             <div className="my-auto text-white text-lg">{pageName}</div>
             {token === null ? (
-              <div className="flex space-x-4">
+              <div className="flex space-x-2 sm:space-x-4">
                 <Button
                   text="Sign Up"
                   bgcolor="bg-transparent"
@@ -67,11 +65,11 @@ export default function NavBar() {
               <img
                 src={logo}
                 alt="logo"
-                className="w-10 h-10 object-cover rounded-full"
+                className="w-8 sm:w-10 h-8 sm:h-10 object-cover rounded-full"
               />
             </Link>
           </div>
-          <ul className="flex space-x-6 text-white text-sm">
+          <ul className="flex space-x-4 sm:space-x-6 text-white text-sm">
             {data.navLinks.map((item) => (
               <li key={item.id}>
                 <Link to={item.url} className="hover:text-gray-400">
@@ -87,7 +85,7 @@ export default function NavBar() {
               textcolor="text-white"
               bordercolor="border-white-50"
               height="h-9"
-              width="w-28"
+              width="w-24 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
           </div>

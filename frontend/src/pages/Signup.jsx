@@ -44,18 +44,18 @@ export default function Signup() {
 
   return (
     <>
-      <div className="bg-customBlack2 h-screen flex justify-center items-center">
-        <div className="flex bg-customBlack m-auto w-[60%] h-[85%]">
-          <div className="w-1/2 flex flex-col justify-center items-center">
+      <div className="bg-customBlack2 h-screen flex justify-center items-center p-4">
+        <div className="flex flex-col lg:flex-row bg-customBlack w-full max-w-5xl h-auto lg:h-[85%] rounded-lg overflow-hidden shadow-lg">
+          <div className="lg:w-1/2 flex flex-col justify-center items-center p-8 gap-4">
             {/* Left side signup form section and logo */}
-            <div className="flex flex-col gap-8">
-              <img
-                src={logo}
-                alt="logo"
-                className="w-8 h-8 object-cover rounded-full"
-              />
+            <img
+              src={logo}
+              alt="logo"
+              className="w-10 h-10 object-cover rounded-full -ml-[90%]"
+            />
+            <div className="flex flex-col gap-8 w-4/6 max-w-md">
               {/* Form */}
-              <div className="w-[22rem] rounded-xl p-4 m-auto">
+              <div className="w-full rounded-xl">
                 <HeadPara title="Join OvaDrive!" highlightIndex={1} />
                 <div className="gap-2 flex flex-col my-6">
                   <Input
@@ -98,8 +98,12 @@ export default function Signup() {
             </div>
           </div>
           {/* Right side image */}
-          <div className="w-1/2">
-            <img src={hero} alt="side image" className="object-cover h-full" />
+          <div className="lg:w-1/2 hidden lg:block">
+            <img
+              src={hero}
+              alt="side image"
+              className="object-cover h-full w-full"
+            />
           </div>
         </div>
       </div>
