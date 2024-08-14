@@ -22,10 +22,10 @@ function App() {
         {/* If the user is not authenticated, redirect to the login page */}
         <Route
           path="/"
-          element={isAuthenticated ? <Home /> : <Navigate to="/singup" />}
+          element={isAuthenticated ? <Home /> : <Navigate to="/signup" />}
         />
         <Route path="/documentation" element={<Documentation />} />
-        <Route path="/login" element={<Signin />} />
+        <Route path="/signin" element={<Signin />} />
         <Route path="/signup" element={<Signup />} />
       </Routes>
     </BrowserRouter>

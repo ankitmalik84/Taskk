@@ -9,10 +9,12 @@ import logo from "../assets/logo.png";
 import hero from "../assets/hero.png";
 
 export default function Signup() {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  const apiUrl = import.meta.env.VITE_URL;
   const navigate = useNavigate();
 
   const handleSignup = async () => {
@@ -21,18 +23,22 @@ export default function Signup() {
       return;
     }
 
+    setLoading(true);
     try {
-      const res = await axios.post("http://localhost:3000/api/v1/user/signup", {
-        userName,
+      const res = await axios.post(`${apiUrl}/user/signup`, {
+        email,
         password,
       });
       const token = "Bearer " + res.data.token;
       localStorage.setItem("token", token);
-      navigate("/dashboard");
+      localStorage.setItem("Users", JSON.stringify(res.data.user));
+      navigate("/documentation");
     } catch (err) {
       console.log(err);
-      const errMsg = err.response.data.message;
+      const errMsg = err.response?.data?.message || "An error occurred";
       alert(errMsg);
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -53,27 +59,21 @@ export default function Signup() {
                 <HeadPara title="Join OvaDrive!" highlightIndex={1} />
                 <div className="gap-2 flex flex-col my-6">
                   <Input
-                    onChangeFn={(e) => {
-                      setUserName(e.target.value);
-                    }}
+                    onChangeFn={(e) => setEmail(e.target.value)}
                     id={"email"}
                     label={"Email"}
                     placeholder={"example@gmail.com"}
                     type={"email"}
                   />
                   <Input
-                    onChangeFn={(e) => {
-                      setPassword(e.target.value);
-                    }}
+                    onChangeFn={(e) => setPassword(e.target.value)}
                     id={"password"}
                     label={"Password"}
                     placeholder={"minimum 8 characters"}
                     type={"password"}
                   />
                   <Input
-                    onChangeFn={(e) => {
-                      setConfirmPassword(e.target.value);
-                    }}
+                    onChangeFn={(e) => setConfirmPassword(e.target.value)}
                     id={"confirmPassword"}
                     label={"Confirm Password"}
                     placeholder={"confirm your password"}
@@ -82,11 +82,12 @@ export default function Signup() {
                 </div>
                 <Button
                   onClickFn={handleSignup}
-                  text="Sign Up"
+                  text={loading ? "Loading..." : "Sign Up"}
                   textcolor="text-white"
                   bgcolor="bg-customPurple"
                   bordercolor="border-customPurple"
                   height={"h-10"}
+                  disabled={loading}
                 />
                 <BottomWarning
                   text={"Already have an account?"}

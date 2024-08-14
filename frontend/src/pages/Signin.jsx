@@ -9,17 +9,40 @@ import logo from "../assets/logo.png";
 import hero from "../assets/hero.png";
 
 export default function Signin() {
-  const [userName, setUserName] = useState("");
+  const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+
+  const apiUrl = import.meta.env.VITE_URL;
+
+  const handleLogin = async () => {
+    setLoading(true);
+    try {
+      const response = await axios.post(`${apiUrl}/user/signin`, {
+        email,
+        password,
+      });
+      const token = "Bearer " + response.data.token;
+      localStorage.setItem("token", token);
+      localStorage.setItem("Users", JSON.stringify(response.data.user));
+      navigate("/documentation");
+    } catch (err) {
+      console.log(err);
+      const errMsg = err.response?.data?.message || "An error occurred";
+      alert(errMsg);
+    } finally {
+      setLoading(false);
+    }
+  };
 
   return (
     <>
       <div className="bg-customBlack2 h-screen flex justify-center items-center">
         <div className="flex bg-customBlack m-auto w-[60%] h-[85%]">
           <div className="w-1/2 flex flex-col justify-center items-center">
-            {/*left side signin form section and logo*/}
+            {/* Left side sign-in form section and logo */}
             <div className="flex flex-col gap-8">
               <img
                 src={logo}
@@ -28,22 +51,21 @@ export default function Signin() {
               />
 
               {/* Form */}
-              <div className=" w-[22rem] rounded-xl p-4 m-auto">
-                <HeadPara title="Welcom back to OvaDrive!" highlightIndex={3} />
+              <div className="w-[22rem] rounded-xl p-4 m-auto">
+                <HeadPara
+                  title="Welcome back to OvaDrive!"
+                  highlightIndex={3}
+                />
                 <div className="gap-2 flex flex-col my-6">
                   <Input
-                    onChangeFn={(e) => {
-                      setUserName(e.target.value);
-                    }}
+                    onChangeFn={(e) => setEmail(e.target.value)}
                     id={"email"}
                     label={"Email"}
                     placeholder={"example@gmail.com"}
                     type={"email"}
                   />
                   <Input
-                    onChangeFn={(e) => {
-                      setPassword(e.target.value);
-                    }}
+                    onChangeFn={(e) => setPassword(e.target.value)}
                     id={"password"}
                     label={"Password"}
                     placeholder={"minimum 8 characters"}
@@ -51,29 +73,13 @@ export default function Signin() {
                   />
                 </div>
                 <Button
-                  onClickFn={async () => {
-                    axios
-                      .post("http://localhost:3000/api/v1/user/signin", {
-                        userName,
-                        password,
-                      })
-                      .then((res) => {
-                        // console.log(res.data.token);
-                        const token = "Bearer " + res.data.token;
-                        localStorage.setItem("token", token);
-                        navigate("/dashboard");
-                      })
-                      .catch((err) => {
-                        console.log(err);
-                        const errMsg = err.response.data.message;
-                        alert(errMsg);
-                      });
-                  }}
-                  text="Sign In"
+                  onClickFn={handleLogin}
+                  text={loading ? "Loading..." : "Sign In"}
                   textcolor="text-white"
                   bgcolor="bg-customPurple"
                   bordercolor="border-customPurple"
                   height={"h-10"}
+                  disabled={loading}
                 />
                 <BottomWarning
                   text={"Don't have an account?"}
@@ -83,7 +89,7 @@ export default function Signin() {
               </div>
             </div>
           </div>
-          {/* right side  Image */}
+          {/* Right side Image */}
           <div className="w-1/2">
             <img src={hero} alt="side image" className="object-cover h-full" />
           </div>

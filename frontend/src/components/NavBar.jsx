@@ -48,12 +48,12 @@ export default function NavBar() {
                   bordercolor="border-customPurple"
                   height="h-9"
                   width="w-24"
-                  onClickFn={() => (window.location.href = "/login")}
+                  onClickFn={() => (window.location.href = "/signin")}
                 />
               </div>
             ) : (
               <ProfileDropDown
-                userName={JSON.parse(localStorage.getItem("Users")).fullname}
+                email={JSON.parse(localStorage.getItem("Users")).email}
               />
             )}
           </div>
