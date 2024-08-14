@@ -21,11 +21,13 @@ export default function NavBar() {
       {location.pathname === "/documentation" ? (
         <>
           <div className="flex items-center space-x-2 w-[17rem]">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-10 h-10 object-cover rounded-full"
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-10 h-10 object-cover rounded-full"
+              />
+            </Link>
             <div className="text-white text-lg w-20">OvaDrive</div>
           </div>
           <div className="flex justify-between w-full">
@@ -61,11 +63,13 @@ export default function NavBar() {
       ) : (
         <>
           <div className="flex items-center space-x-2">
-            <img
-              src={logo}
-              alt="logo"
-              className="w-10 h-10 object-cover rounded-full"
-            />
+            <Link to="/">
+              <img
+                src={logo}
+                alt="logo"
+                className="w-10 h-10 object-cover rounded-full"
+              />
+            </Link>
           </div>
           <ul className="flex space-x-6 text-white text-sm">
             {data.navLinks.map((item) => (
