@@ -7,10 +7,10 @@ import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const [isAuthenticated, setIsAuthenticated] = useState(false);
 
   useEffect(() => {
-    const token = localStorage.getItem("token"); // Replace "authToken" with your actual token key
+    const token = localStorage.getItem("token");
     if (token) {
       setIsAuthenticated(true);
     }
