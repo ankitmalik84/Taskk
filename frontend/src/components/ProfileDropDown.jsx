@@ -16,7 +16,7 @@ export default function ProfileDropDown({ email }) {
         {email.charAt(0)}
       </div>
       {isOpen && (
-        <div className="absolute top-[72px] right-4 mx-2 md:mx-4 border-2 rounded-lg">
+        <div className="absolute top-[72px] right-4 sm:right-16 mx-2 md:mx-4 border-2 rounded-lg">
           <div
             onClick={() => {
               localStorage.removeItem("token");
