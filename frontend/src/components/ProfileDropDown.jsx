@@ -1,12 +1,15 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { logout } from "../reducer/authReducer";
 
 export default function ProfileDropDown({ email }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
   const handleLogout = () => {
-    localStorage.removeItem("token");
-    localStorage.removeItem("Users");
+    dispatch(logout());
     navigate("/documentation");
     window.location.reload();
   };

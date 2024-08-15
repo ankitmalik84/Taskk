@@ -5,6 +5,8 @@ import HeadPara from "../components/common/HeadPara";
 import Input from "../components/common/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../reducer/authReducer";
 import logo from "../assets/logo.png";
 import hero from "../assets/hero.png";
 
@@ -14,6 +16,7 @@ export default function Signin() {
   const [loading, setLoading] = useState(false);
 
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   const apiUrl = import.meta.env.VITE_URL;
 
@@ -25,8 +28,7 @@ export default function Signin() {
         password,
       });
       const token = "Bearer " + response.data.token;
-      localStorage.setItem("token", token);
-      localStorage.setItem("Users", JSON.stringify(response.data.user));
+      dispatch(login({ token, username: response.data.user }));
       navigate("/");
     } catch (err) {
       console.log(err);

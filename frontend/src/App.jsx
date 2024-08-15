@@ -1,20 +1,26 @@
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { useSelector, useDispatch } from "react-redux";
 import "./App.css";
 import Home from "./pages/Home";
 import Documentation from "./pages/Documentation";
 import Signin from "./pages/Signin";
 import Signup from "./pages/Signup";
+import { login, logout } from "./reducer/authReducer";
 
 function App() {
-  const [isAuthenticated, setIsAuthenticated] = useState(true);
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
+  const dispatch = useDispatch();
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    if (token) {
-      setIsAuthenticated(true);
+    const username = localStorage.getItem("username");
+    if (token && username) {
+      dispatch(login({ token, username }));
+    } else {
+      dispatch(logout());
     }
-  }, []);
+  }, [dispatch]);
 
   return (
     <BrowserRouter>

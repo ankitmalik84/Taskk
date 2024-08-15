@@ -1,6 +1,6 @@
 import { useState, useRef } from "react";
 import Hamburger from "hamburger-react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import logo from "../assets/logo.png";
 import Button from "./common/Button";
 import data from "../data.json";
@@ -10,6 +10,7 @@ import useOnClickOutside from "../hook/useOnClickOutside";
 export default function NavBar() {
   const [open, setOpen] = useState(false);
   const location = useLocation();
+  const navigate = useNavigate();
   const token = localStorage.getItem("token");
   const ref = useRef(null);
 
@@ -30,7 +31,7 @@ export default function NavBar() {
         bordercolor="border-customPurple"
         height="h-9"
         width="w-24"
-        onClickFn={() => (window.location.href = "/signup")}
+        onClickFn={() => navigate("/signup")}
       />
       <Button
         text="Login"
@@ -39,7 +40,7 @@ export default function NavBar() {
         bordercolor="border-customPurple"
         height="h-9"
         width="w-24"
-        onClickFn={() => (window.location.href = "/signin")}
+        onClickFn={() => navigate("/signin")}
       />
     </>
   );
@@ -99,9 +100,7 @@ export default function NavBar() {
                 </div>
               </>
             ) : (
-              <ProfileDropDown
-                email={JSON.parse(localStorage.getItem("Users"))}
-              />
+              <ProfileDropDown email={localStorage.getItem("User")} />
             )}
           </div>
         </>

@@ -5,6 +5,8 @@ import HeadPara from "../components/common/HeadPara";
 import Input from "../components/common/Input";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { login } from "../reducer/authReducer";
 import logo from "../assets/logo.png";
 import hero from "../assets/hero.png";
 
@@ -14,8 +16,10 @@ export default function Signup() {
   const [confirmPassword, setConfirmPassword] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const apiUrl = import.meta.env.VITE_URL;
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const apiUrl = import.meta.env.VITE_URL;
 
   const handleSignup = async () => {
     if (password !== confirmPassword) {
@@ -30,8 +34,7 @@ export default function Signup() {
         password,
       });
       const token = "Bearer " + res.data.token;
-      localStorage.setItem("token", token);
-      localStorage.setItem("Users", JSON.stringify(res.data.user));
+      dispatch(login({ token, username: res.data.user }));
       navigate("/");
     } catch (err) {
       console.log(err);
