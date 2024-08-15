@@ -1,18 +1,13 @@
-// backend/db.js
 const mongoose = require("mongoose");
 
-mongoose.connect(
-  "mongodb+srv://ankitmalik84:74AN9JGRAO0PHl05@cluster0.bcntccx.mongodb.net/intern"
-);
+mongoose.connect(process.env.DB);
 
 const db = mongoose.connection;
 
-// Event listener for successful connection
 db.on("connected", () => {
   console.log("Successfully connected to MongoDB");
 });
 
-// Event listener for connection error
 db.on("error", (error) => {
   console.error("Error connecting to MongoDB:", error);
 });
