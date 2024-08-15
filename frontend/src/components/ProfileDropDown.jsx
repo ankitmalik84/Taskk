@@ -4,6 +4,12 @@ import { useNavigate } from "react-router-dom";
 export default function ProfileDropDown({ email }) {
   const [isOpen, setIsOpen] = useState(false);
   const navigate = useNavigate();
+  const handleLogout = () => {
+    localStorage.removeItem("token");
+    localStorage.removeItem("Users");
+    navigate("/documentation");
+    window.location.reload();
+  };
 
   return (
     <>
@@ -18,11 +24,7 @@ export default function ProfileDropDown({ email }) {
       {isOpen && (
         <div className="absolute top-[72px] right-4 sm:right-16 mx-2 md:mx-4 border-2 rounded-lg">
           <div
-            onClick={() => {
-              localStorage.removeItem("token");
-              localStorage.removeItem("Users");
-              navigate("/documentation");
-            }}
+            onClick={handleLogout}
             className="p-1 bg-customBlack2 border-1 rounded-lg shadow-md cursor-pointer"
           >
             Log Out
