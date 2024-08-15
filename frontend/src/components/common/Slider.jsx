@@ -9,7 +9,9 @@ export default function SliderComp({ heading, data }) {
     slidesToShow: 5,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 1000,
+    autoplaySpeed: 2000,
+    pauseOnHover: false,
+    speed: 1000,
     arrows: false,
     responsive: [
       {
