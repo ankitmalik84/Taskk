@@ -2,7 +2,7 @@ import NavBar from "../components/NavBar";
 import Hero from "../components/Hero";
 import HeadPara from "../components/common/HeadPara";
 import data from "../data.json";
-import Slider from "../components/common/Slider";
+import SliderComp from "../components/common/Slider";
 import Model from "../components/Model";
 import HighLightText2 from "../components/common/HighLightText2";
 
@@ -30,9 +30,9 @@ export default function Home() {
         />
       </div>
       <div className="flex flex-col gap-14 my-24">
-        <Slider data={data.slider1} heading="OvalDrive" />
-        <Slider data={data.slider2} heading="Careers" />
-        <Slider data={data.slider3} heading="Our Team" />
+        <SliderComp data={data.slider1} heading="OvalDrive" />
+        <SliderComp data={data.slider2} heading="Careers" />
+        <SliderComp data={data.slider3} heading="Our Team" />
       </div>
       <div className="my-16">
         <Model />
