@@ -39,7 +39,9 @@ router.post("/signup", async (req, res) => {
       expiresIn: "12h",
     });
 
-    res.status(201).json({ message: "User created successfully", token, user });
+    res
+      .status(201)
+      .json({ message: "User created successfully", token, user: user.email });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }
@@ -73,7 +75,11 @@ router.post("/signin", async (req, res) => {
 
     res
       .status(200)
-      .json({ message: "User signed in successfully", token, user });
+      .json({
+        message: "User signed in successfully",
+        token,
+        user: user.email,
+      });
   } catch (error) {
     res.status(500).json({ message: "Server error", error: error.message });
   }

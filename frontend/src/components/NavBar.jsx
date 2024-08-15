@@ -53,7 +53,7 @@ export default function NavBar() {
               </div>
             ) : (
               <ProfileDropDown
-                email={JSON.parse(localStorage.getItem("Users")).email}
+                email={JSON.parse(localStorage.getItem("Users"))}
               />
             )}
           </div>
