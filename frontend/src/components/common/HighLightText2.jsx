@@ -2,7 +2,7 @@ export default function HighLightText2({ text, index }) {
   const words = text.split(/\s+/);
 
   return (
-    <span className="relative font-bold text-4xl text-center">
+    <span className="relative font-bold text-2xl sm:text-3xl md:text-4xl text-center">
       {words.map((word, idx) => (
         <span
           key={word + idx}

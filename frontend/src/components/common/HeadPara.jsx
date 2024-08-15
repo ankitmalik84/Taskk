@@ -10,7 +10,9 @@ export default function HeadPara({
 
   return (
     <div className={`w-full mx-auto flex flex-col ${description && "my-16"} `}>
-      <h1 className={`text-4xl font-bold ${leading || ""} text-white`}>
+      <h1
+        className={`text-3xl sm:text-4xl font-bold ${leading || ""} text-white`}
+      >
         {words.map((word, index) =>
           index === highlightIndex ? (
             <HighLightText
@@ -25,7 +27,7 @@ export default function HeadPara({
         )}
       </h1>
       {description && (
-        <p className="mt-8 text-white opacity-75 text-md leading-7">
+        <p className="mt-4 sm:mt-8 text-white opacity-75 text-md leading-6 sm:leading-7">
           {description}
         </p>
       )}

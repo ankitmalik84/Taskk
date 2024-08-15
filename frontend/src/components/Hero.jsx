@@ -40,24 +40,24 @@ export default function Hero() {
   }, []);
 
   return (
-    <div className="w-full h-[520px] flex flex-col">
+    <div className="w-full h-full flex flex-col">
       <div
-        className="relative w-full h-[500px] bg-cover bg-center"
+        className="relative w-full h-[440px] sm:h-[500px] bg-cover bg-center"
         style={{
           backgroundImage: `url(${heroBg})`,
         }}
       >
         <div className="h-full backdrop-blur-sm flex flex-col">
           {/* Upper Content Section */}
-          <div className="relative mt-24 flex flex-col text-center space-y-4">
+          <div className="relative mt-16 sm:mt-24 flex flex-col text-center space-y-4">
             <div className="text-white opacity-75 text-md">
               The Ultimate AI Assistant
             </div>
-            <h1 className="text-5xl font-bold text-white">
+            <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-white">
               {slides[slideIndex].title}
             </h1>
             {/* above down content */}
-            <div className="w-3/6 mx-auto flex flex-col">
+            <div className="w-5/6 sm:w-3/6 mx-auto flex flex-col">
               <p className="mt-2 text-white opacity-75">
                 {slides[slideIndex].description}
               </p>
@@ -72,8 +72,8 @@ export default function Hero() {
               bgcolor="bg-customPurple"
               textcolor="text-white"
               bordercolor="border-customPurple"
-              height="h-9"
-              width="w-28"
+              height="h-12 sm:h-9"
+              width="w-28 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
             <Button
@@ -81,8 +81,8 @@ export default function Hero() {
               bgcolor="bg-customPurple"
               textcolor="text-white"
               bordercolor="border-customPurple"
-              height="h-9"
-              width="w-28"
+              height="h-12 sm:h-9"
+              width="w-24 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
             <Button
@@ -90,8 +90,8 @@ export default function Hero() {
               bgcolor="bg-transparent"
               textcolor="text-white"
               bordercolor="border-white"
-              height="h-9"
-              width="w-28"
+              height="h-12 sm:h-9"
+              width="w-24 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
           </div>
