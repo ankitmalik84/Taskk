@@ -8,7 +8,7 @@ import HighLightText2 from "../components/common/HighLightText2";
 
 export default function Home() {
   return (
-    <div className="px-4 sm:px-8 lg:px-12 py-2 bg-customBlack">
+    <div className="px-4 sm:px-8 lg:px-12 py-2">
       <NavBar />
       <Hero />
       {data.content.map((item) => (

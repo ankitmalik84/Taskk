@@ -53,13 +53,13 @@ export default function NavBar() {
               <img
                 src={logo}
                 alt="logo"
-                className="w-6 sm:w-10 h-6 sm:h-10 object-cover rounded-full"
+                className="w-8 sm:w-10 h-8 sm:h-10 object-cover rounded-full"
               />
             </Link>
             <div className="text-white text-md sm:text-lg w-20">OvaDrive</div>
           </div>
           <div className="flex justify-between w-full">
-            <div className="my-auto text-white text-sm sm:text-lg ">
+            <div className="my-auto text-white text-md sm:text-lg ">
               {pageName}
             </div>
             {token === null ? (

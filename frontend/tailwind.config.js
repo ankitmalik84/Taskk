@@ -20,7 +20,11 @@ export default {
   plugins: [
     function ({ addBase }) {
       addBase({
-        body: { color: "#ffffff", fontFamily: "Poppins, sans-serif" }, // Set default text color for body
+        body: {
+          color: "#ffffff",
+          fontFamily: "Poppins, sans-serif",
+          backgroundColor: "#212121",
+        },
       });
     },
   ],

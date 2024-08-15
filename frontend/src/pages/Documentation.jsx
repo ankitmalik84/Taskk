@@ -68,7 +68,7 @@ export default function Documentation() {
   }, []);
 
   return (
-    <div className="bg-customBlack h-full py-2">
+    <div className="pt-2">
       <div className="md:px-12 lg:px-16">
         <NavBar />
       </div>
@@ -95,7 +95,7 @@ export default function Documentation() {
         </div>
 
         {/* Right side content section */}
-        <div className="w-full sm:w-4/5 h-full bg-customBlack2 ml-4 mr-4 sm:mr-12 rounded-xl">
+        <div className="w-full sm:w-4/5 h-fit bg-customBlack2 ml-4 mr-4 sm:mr-12 rounded-xl">
           <div className="py-6 sm:py-12 p-6 sm:px-24">
             <h2 className="mb-4 sm:mb-8 text-2xl sm:text-3xl">Overview</h2>
             <div className="flex flex-col gap-8 text-sm sm:text-md leading-5 sm:leading-7">
