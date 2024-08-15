@@ -32,7 +32,7 @@ export default function Signup() {
       const token = "Bearer " + res.data.token;
       localStorage.setItem("token", token);
       localStorage.setItem("Users", JSON.stringify(res.data.user));
-      navigate("/documentation");
+      navigate("/");
     } catch (err) {
       console.log(err);
       const errMsg = err.response?.data?.message || "An error occurred";

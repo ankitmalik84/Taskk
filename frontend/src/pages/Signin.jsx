@@ -27,7 +27,7 @@ export default function Signin() {
       const token = "Bearer " + response.data.token;
       localStorage.setItem("token", token);
       localStorage.setItem("Users", JSON.stringify(response.data.user));
-      navigate("/documentation");
+      navigate("/");
     } catch (err) {
       console.log(err);
       const errMsg = err.response?.data?.message || "An error occurred";
