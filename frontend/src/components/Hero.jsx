@@ -49,7 +49,7 @@ export default function Hero() {
       >
         <div className="h-full backdrop-blur-sm flex flex-col">
           {/* Upper Content Section */}
-          <div className="relative mt-16 sm:mt-24 flex flex-col text-center space-y-4">
+          <div className="relative mt-16 sm:mt-20 md:mt-24 flex flex-col text-center space-y-4">
             <div className="text-white opacity-75 text-md">
               The Ultimate AI Assistant
             </div>
@@ -72,7 +72,7 @@ export default function Hero() {
               bgcolor="bg-customPurple"
               textcolor="text-white"
               bordercolor="border-customPurple"
-              height="h-12 sm:h-9"
+              height="h-9"
               width="w-28 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
@@ -81,8 +81,8 @@ export default function Hero() {
               bgcolor="bg-customPurple"
               textcolor="text-white"
               bordercolor="border-customPurple"
-              height="h-12 sm:h-9"
-              width="w-24 sm:w-28"
+              height="h-9"
+              width="w-20 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
             <Button
@@ -90,7 +90,7 @@ export default function Hero() {
               bgcolor="bg-transparent"
               textcolor="text-white"
               bordercolor="border-white"
-              height="h-12 sm:h-9"
+              height="h-9"
               width="w-24 sm:w-28"
               onClickFn={() => (window.location.href = "/")}
             />
