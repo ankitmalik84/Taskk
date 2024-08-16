@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@fontsource/poppins": "^5.0.14",
+    "@gsap/react": "^2.1.1",
     "@reduxjs/toolkit": "^2.2.7",
     "axios": "^1.7.3",
     "hamburger-react": "^2.5.1",

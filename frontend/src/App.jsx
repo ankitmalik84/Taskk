@@ -9,12 +9,12 @@ import Signup from "./pages/Signup";
 import { login, logout } from "./reducer/authReducer";
 
 function App() {
-  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
   const dispatch = useDispatch();
+  const isAuthenticated = useSelector((state) => state.auth.isAuthenticated);
 
   useEffect(() => {
     const token = localStorage.getItem("token");
-    const username = localStorage.getItem("username");
+    const username = localStorage.getItem("User");
     if (token && username) {
       dispatch(login({ token, username }));
     } else {
@@ -25,14 +25,19 @@ function App() {
   return (
     <BrowserRouter>
       <Routes>
-        {/* If the user is not authenticated, redirect to the login page */}
         <Route
           path="/"
           element={isAuthenticated ? <Home /> : <Navigate to="/signup" />}
         />
         <Route path="/documentation" element={<Documentation />} />
-        <Route path="/signin" element={<Signin />} />
-        <Route path="/signup" element={<Signup />} />
+        <Route
+          path="/signin"
+          element={!isAuthenticated ? <Signin /> : <Navigate to="/" />}
+        />
+        <Route
+          path="/signup"
+          element={!isAuthenticated ? <Signup /> : <Navigate to="/" />}
+        />
       </Routes>
     </BrowserRouter>
   );
