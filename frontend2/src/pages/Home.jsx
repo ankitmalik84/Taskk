@@ -58,7 +58,7 @@ export default function Home() {
     }, main);
 
     AOS.init({
-      duration: 700,
+      duration: 900,
       easing: "ease-out-cubic",
     });
 

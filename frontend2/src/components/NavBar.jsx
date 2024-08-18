@@ -152,7 +152,10 @@ export default function NavBar() {
                       handleNavClick(item.url);
                     }}
                   >
-                    <Link to={item.url} className="hover:text-gray-400">
+                    <Link
+                      to={item.url}
+                      className="hover:text-gray-400 ease-out duration-300"
+                    >
                       {item.name}
                     </Link>
                   </li>
