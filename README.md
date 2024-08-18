@@ -5,8 +5,9 @@
 This project consists of three main components:
 
 1. **Frontend**: A React application built with Vite for fast development and build times.
-2. **Backend**: A Node.js Express application with MongoDB for managing data.
-3. **Server**: A Node.js Express application with PostgreSQL for managing data.
+1. **Frontend2**: A React application built with Vite for fast development and build times.
+1. **Backend**: A Node.js Express application with MongoDB for managing data.
+1. **Server**: A Node.js Express application with PostgreSQL for managing data.
 
 ## Folder Structure
 
@@ -14,6 +15,10 @@ This project consists of three main components:
 project-root/
 │
 ├── frontend/        # React + Vite application
+│   ├── src/          # Source files
+│   ├── public/       # Static assets
+│   └── ...           # Other Vite configuration files
+├── frontend2/        # React + Vite application
 │   ├── src/          # Source files
 │   ├── public/       # Static assets
 │   └── ...           # Other Vite configuration files
@@ -54,6 +59,37 @@ The frontend is built with React and Vite.
 ### Deployment
 
 - **URL**: [https://taskk-iota.vercel.app](https://taskk-iota.vercel.app/)
+- **Deployment Platform**: Vercel
+
+  The frontend is deployed on Vercel. For automatic deployments, push changes to the `main` branch of your repository.
+
+## Frontend2
+
+The frontend is built with React and Vite.
+
+### Getting Started
+
+1. Navigate to the `frontend` directory:
+
+   ```bash
+   cd frontend2
+   ```
+
+2. Install dependencies:
+
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+
+   ```bash
+   npm run dev
+   ```
+
+### Deployment
+
+- **URL**: [https://taskk-1528.vercel.app/](https://taskk-1528.vercel.app/)
 - **Deployment Platform**: Vercel
 
   The frontend is deployed on Vercel. For automatic deployments, push changes to the `main` branch of your repository.
