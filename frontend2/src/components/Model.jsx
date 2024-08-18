@@ -22,6 +22,7 @@ export default function Model() {
         <div className="flex justify-center">
           <AnimatedButton
             text="Try OvaDrive"
+            highlightText="OvaDrive"
             bgcolor="bg-white"
             textcolor="text-customBlack"
             bordercolor="border-black"

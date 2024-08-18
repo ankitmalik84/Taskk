@@ -17,7 +17,7 @@ export default function Input({ id, label, placeholder, type, onChangeFn }) {
           {showPassword ? <FaRegEyeSlash /> : <FaRegEye />}
         </span>
         <input
-          className="text-sm bg-customBlack2 w-full px-2 py-2 text-customGray font-normal rounded-lg"
+          className="text-sm bg-customBlack2 w-full px-2 py-2 text-white font-normal rounded-lg"
           type={showPassword ? "text" : "password"}
           id={id}
           onChange={onChangeFn}
@@ -31,7 +31,7 @@ export default function Input({ id, label, placeholder, type, onChangeFn }) {
         {label}
       </label>
       <input
-        className="text-sm bg-customBlack2 w-full px-2 py-2 text-customGray font-normal rounded-lg"
+        className="text-sm  bg-customBlack2 w-full px-2 py-2 text-white font-normal rounded-lg"
         type={type}
         id={id}
         onChange={onChangeFn}

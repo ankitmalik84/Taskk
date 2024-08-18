@@ -20,14 +20,12 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
-      // Initial state of text
       gsap.set(text.current, {
         opacity: 0,
         scale: 10,
-        pointerEvents: "none", // Disable pointer events initially
+        pointerEvents: "none",
       });
 
-      // Animation for hiding container and showing text
       gsap.to(hero.current, {
         opacity: 0,
         duration: 1,
@@ -36,13 +34,13 @@ export default function Home() {
           start: "-=18%",
           end: "+=50%",
           scrub: true,
-          pin: true, // Pin the Hero section during the animation
+          pin: true,
           onEnter: () => {
             gsap.to(text.current, {
               opacity: 1,
               scale: 1,
               duration: 0.6,
-              pointerEvents: "auto", // Enable pointer events when the text is visible
+              pointerEvents: "auto",
             });
           },
           onLeaveBack: () => {
@@ -50,16 +48,15 @@ export default function Home() {
               opacity: 0,
               scale: 20,
               duration: 1,
-              pointerEvents: "none", // Disable pointer events when text is not visible
+              pointerEvents: "none",
             });
           },
         },
       });
     }, main);
 
-    // Initialize AOS for fade animations
     AOS.init({
-      duration: 700, // Animation duration in milliseconds
+      duration: 700,
       easing: "ease-out-cubic",
     });
 
@@ -69,7 +66,6 @@ export default function Home() {
   return (
     <div className="px-4 lg:px-12 pt-24 sm:pt-16 overflow-x-clip">
       <NavBar />
-      {/* Hero Animation */}
       <div
         ref={main}
         className="relative h-[440px] sm:h-[500px] overflow-hidden"
@@ -77,7 +73,6 @@ export default function Home() {
         <div ref={hero} className="absolute inset-0">
           <Hero />
         </div>
-        {/* Animated Text Section */}
         <div
           ref={text}
           className="absolute inset-0 flex items-center justify-center h-[440px] sm:h-[500px] bg-customBlack"
@@ -88,7 +83,6 @@ export default function Home() {
         </div>
       </div>
       <div>
-        {/* Image Paragraph Section */}
         <div className="flex flex-col gap-8">
           {data.content.map((item) => (
             <TextImage
@@ -102,7 +96,6 @@ export default function Home() {
             />
           ))}
         </div>
-        {/* Highlight Text */}
         <div
           className="flex w-full lg:w-[64%] mx-auto py-16 sm:py-24"
           data-aos="zoom-out-up"
@@ -117,7 +110,7 @@ export default function Home() {
             index={13}
           />
         </div>
-        {/* Auto Slider */}
+
         <div data-aos="zoom-out">
           <div
             className="flex flex-col my-24 h-[380px]"
@@ -127,7 +120,7 @@ export default function Home() {
             <SliderComp data={data.slider1} heading="OvalDrive" />
           </div>
         </div>
-        {/* Our Team */}
+
         <div
           className="py-16 sm:py-24"
           id="our-team"
@@ -136,7 +129,7 @@ export default function Home() {
         >
           <OurTeam />
         </div>
-        {/* Model */}
+
         <div className="mt-0 sm:mt-44" data-aos="fade-up">
           <Model />
         </div>
