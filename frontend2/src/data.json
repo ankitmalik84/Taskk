@@ -13,7 +13,7 @@
       "title": "What Steve Jobs Thought",
       "description": "In 1983, Steve Jobs envisioned a future where technology could virtualize human consciousness, making it immortal. Though this dream remains unrealized, it continues to inspire. What does it mean to be immortal? Is it to never die, or to live on through the memories we leave behind? At OvaDrive, we explore this question by pushing the boundaries of technology and imagination. Our mission is to preserve and interact with human consciousness, creating a world where the line between life and legacy blurs, and the dream of immortality comes closer to reality.",
       "highlightIndex": 3,
-      "img": "/assets/img1.jpeg",
+      "img": "../assets/img1.jpeg",
       "position": "right",
       "aos": "fade-up"
     },
@@ -22,7 +22,7 @@
       "title": "The Vision Behind OvaDrive",
       "description": "Imagine having a Personal Documentarian—a digital companion that lives your life alongside you, fully under your control. It listens to what you hear, watches what you see, and captures the essence of your experiences. Now, imagine integrating this with a finely tuned Large Language Model, tailored to the unique context of Your World. This isn't just about evolving Artificial General Intelligence; it's about creating an Artificial Soul, a digital entity that understands and resonates with the depth of your existence, far beyond what current digital assistants can offer.",
       "highlightIndex": 1,
-      "img": "./src/assets/img2.jpeg",
+      "img": "../assets/img2.jpeg",
       "position": "left",
       "aos": "zoom-out-up"
     },
