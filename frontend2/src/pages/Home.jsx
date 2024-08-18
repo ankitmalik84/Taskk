@@ -20,6 +20,8 @@ export default function Home() {
 
   useEffect(() => {
     const ctx = gsap.context(() => {
+      const isMobile = window.innerWidth <= 624;
+
       gsap.set(text.current, {
         opacity: 0,
         scale: 10,
@@ -31,15 +33,15 @@ export default function Home() {
         duration: 1,
         scrollTrigger: {
           trigger: main.current,
-          start: "-=18%",
-          end: "+=50%",
+          start: isMobile ? "top 100px" : "-=18% top",
+          end: isMobile ? "end 80px" : "+=40%",
           scrub: true,
           pin: true,
           onEnter: () => {
             gsap.to(text.current, {
               opacity: 1,
               scale: 1,
-              duration: 0.6,
+              duration: 0.5,
               pointerEvents: "auto",
             });
           },
@@ -64,11 +66,11 @@ export default function Home() {
   }, []);
 
   return (
-    <div className="px-4 lg:px-12 pt-24 sm:pt-16 overflow-x-clip">
+    <div className="px-4 lg:px-12 pt-20 sm:pt-16 overflow-x-clip">
       <NavBar />
       <div
         ref={main}
-        className="relative h-[440px] sm:h-[500px] overflow-hidden"
+        className="relative h-[460px] sm:h-[500px] overflow-hidden"
       >
         <div ref={hero} className="absolute inset-0">
           <Hero />

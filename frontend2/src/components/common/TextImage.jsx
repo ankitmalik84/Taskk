@@ -40,7 +40,7 @@ export default function TextImage({
           )}
         </h1>
         {description && (
-          <p className="mt-4 sm:mt-8 text-white opacity-75 text-md leading-6 sm:leading-7 text-[14px] sm:text-base">
+          <p className="mt-4 sm:mt-8 text-white opacity-75 text-md leading-6 sm:leading-7 text-[15px] sm:text-base">
             {description}
           </p>
         )}
