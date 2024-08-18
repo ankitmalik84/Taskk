@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import heroBg from "../assets/hero.png";
+import heroBg from "/assets/hero.png";
 import Button from "./common/Button";
 import data from "../data.json";
 

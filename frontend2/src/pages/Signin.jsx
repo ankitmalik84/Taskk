@@ -7,8 +7,8 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login } from "../reducer/authReducer";
-import logo from "../assets/logo.png";
-import hero from "../assets/hero.png";
+import logo from "/assets/logo.png";
+import hero from "/assets/hero.png";
 
 export default function Signin() {
   const [email, setEmail] = useState("");

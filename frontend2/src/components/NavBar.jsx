@@ -1,7 +1,7 @@
 import { useState, useRef } from "react";
 import Hamburger from "hamburger-react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
-import logo from "../assets/logo.png";
+import logo from "/assets/logo.png";
 import Button from "./common/Button";
 import data from "../data.json";
 import ProfileDropDown from "./ProfileDropDown";
