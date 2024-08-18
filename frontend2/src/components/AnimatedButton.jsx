@@ -38,7 +38,7 @@ export default function AnimatedButton({
             height || "h-auto"
           } ${bgcolor} rounded-[50px] ${textcolor}
          ${bordercolor} text-sm flex items-center 
-        gap-2 justify-center group-hover:translate-x-1 group-hover:-translate-y-2 border-[1px] font-bold`}
+        gap-2 justify-center group-hover:translate-x-1 group-hover:-translate-y-2 border-[1px] font-bold ease-out duration-300`}
           onClick={onClickFn}
         >
           <span>
