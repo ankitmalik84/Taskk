@@ -11,6 +11,8 @@ export default {
       },
       backgroundImage: {
         "texture-gradient": "url('/assets/hero.png')",
+        "texture-gradient2":
+          "linear-gradient(16deg, rgba(78,59,157,1) 35%, rgba(134,56,174,1) 59%)",
         "conic-gradient":
           "conic-gradient(from 90deg at 50% 0%, #A600FC, #212121,#212121, #212121);",
         "conic-gradient2":
