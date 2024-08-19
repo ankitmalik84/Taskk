@@ -10,8 +10,7 @@ export default {
         customPurple: "#A600FC",
       },
       backgroundImage: {
-        "texture-gradient":
-          "linear-gradient(16deg, rgba(78,59,157,1) 35%, rgba(134,56,174,1) 59%)",
+        "texture-gradient": "url('/assets/hero.png')",
         "conic-gradient":
           "conic-gradient(from 90deg at 50% 0%, #A600FC, #212121,#212121, #212121);",
         "conic-gradient2":
