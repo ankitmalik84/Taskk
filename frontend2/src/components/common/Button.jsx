@@ -7,6 +7,7 @@ export default function Button({
   height,
   width,
   icon: Icon,
+  disabled = false,
 }) {
   return (
     <button
@@ -17,6 +18,7 @@ export default function Button({
       } ${bgcolor} rounded-full ${textcolor} 
       border-[0.6px] ${bordercolor} text-sm flex items-center 
       gap-2 justify-center`}
+      disabled={disabled}
     >
       {text}
       {Icon && <Icon className="inline-block mr-2" />}
